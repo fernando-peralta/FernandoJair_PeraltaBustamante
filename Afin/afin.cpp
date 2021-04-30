@@ -24,6 +24,13 @@ int gen_clave(int n){//largo del alfabeto
     return clave;
 }
 
+int Euclides(int a, int b){
+    //a=b(x)+r hallar r y luego dividir b y  r
+    int x;
+    x=a/b;
+    
+
+}
 
 int main(){
     cout<<gen_clave(25)<<endl;
