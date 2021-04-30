@@ -20,9 +20,14 @@ int gen_clave(int n){//largo del alfabeto
     srand(time(NULL));//Inicializamos los numeros random
     aux=n-1;//maximo del alfabeto
     clave=1+resto(rand(),aux);//calculamos la clave entre 1 y el largo del alfabeto
+
+    return clave;
 }
 
 
 int main(){
+    cout<<gen_clave(25)<<endl;
     cout<<"Fin del programa";
+    
+
 } 
