@@ -15,10 +15,6 @@ int resto(int a, int n){ //funcion resto recibe a (dividendo) y n )(divisor)
         r=a-(q*n);// simplemente la diferencia entre a y la multiplicacion
         return r;
     }
-}
-
-int aleatorio(){
-    return rand() % 100 + 1;
 }   
 
 
@@ -84,17 +80,23 @@ int inversa(int a, int n){
 class afin
 {
 public:
-    string alfabeto ="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    string alfabeto ="abcdefghijklmnopqrstuvwxyz,.-_ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789()";
     int largo_alfabeto=alfabeto.length(),a=0,b=0;
     afin();
+
     string cifrado(string);
     string descifrado(string,int,int);
     void generar_claves();
+    int aleatorio();
 
 };
 
 afin::afin(){
     generar_claves();
+}
+
+int afin::aleatorio(){
+    return resto(rand(),largo_alfabeto+1);
 }
 
 void afin::generar_claves(){
@@ -109,6 +111,8 @@ void afin::generar_claves(){
 string afin::cifrado(string mensaje){
     int n=mensaje.length();
     string mensajeCifrado;
+
+    mensajeCifrado+="|";
     
     for (int i = 0; i < n; i++){
 
@@ -123,6 +127,7 @@ string afin::cifrado(string mensaje){
         }
     }
     cout<<"clave a: "<<a<<" clave b: "<<b<<endl;
+    mensajeCifrado+="|";
     return mensajeCifrado;
 }
 
